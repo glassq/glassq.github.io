@@ -18,51 +18,60 @@
 }
 
 .companyName {
-  font-size: 6rem; /* Increased font size */
+  font-size: 6rem;
 }
 
 .descriptionText {
   margin-top: 20px;
-  font-size: 1.5rem; /* Increased font size */
+  font-size: 1.5rem;
 }
 
 .ctaButton {
   margin-top: 75px;
-  padding: 15px 30px; /* Increased padding for a bigger button */
+  padding: 15px 30px;
   background-color: transparent;
   border: 2px solid white;
+  color: white;
   border-radius: 5px;
   font-size: 1.2rem;
   cursor: pointer;
   outline: none;
 }
 
+.ctaButton:hover {
+  background-color: white;
+  color: purple;
+}
+
 .inputContainer {
   margin-top: 75px;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Align children to the end (right side) */
+  justify-content: flex-end;
 }
 
 .emailInput {
-  margin-right: 10px; /* Add some spacing between input and send button */
-  padding: 8px;
+  padding: 12px;
+  width: 300px;
   border: 2px solid white;
-  border-radius: 5px;
   font-size: 1rem;
   outline: none;
+  text-align: center;
+  font-size: 1.15rem;
 }
 
 .sendButton {
   cursor: pointer;
   outline: none;
-  color: white;
-  background-color: transparent;
+  background-color: white;
   border: none;
+  height: 100%;
+  border: 2px solid white;
 }
 
 .sendButton-span {
-  font-size: 2.25rem;
+  font-size: 2.475rem;
+  color: black;
 }
 
 .bigger-cube {
