@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
 .App {
   display: flex;
   flex-direction: column;
@@ -19,6 +21,7 @@
 
 .companyName {
   font-size: 6rem;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .descriptionText {
@@ -46,18 +49,37 @@
 .inputContainer {
   margin-top: 75px;
   display: flex;
-  align-items: center;
   justify-content: flex-end;
+  padding: 3px; /* this is the actual border size */
+  border-radius: 10px;
+  background: linear-gradient(21deg, #2980b9, purple);
+  background-size: 200% auto;
+  animation: moveBackground 5s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .emailInput {
+  transform-origin: top;
   padding: 12px;
   width: 300px;
-  border: 2px solid white;
+  border: none;
+  border-radius: 10px 0 0 10px;
   font-size: 1rem;
   outline: none;
   text-align: center;
-  font-size: 1.15rem;
+  height: 18px;
+  background-image: linear-gradient(to right, white, rgb(194, 194, 194));
 }
 
 .sendButton {
@@ -65,16 +87,71 @@
   outline: none;
   background-color: white;
   border: none;
-  height: 100%;
-  border: 2px solid white;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -4px;
+  width: 50px;
+  background-image: linear-gradient(to left, white, rgb(194, 194, 194));
 }
 
 .sendButton-span {
-  font-size: 2.475rem;
+  font-size: 2rem;
+  margin-left: 6px;
+
   color: black;
+  /*background-image: -webkit-linear-gradient(45deg,purple, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;*/
+}
+
+.emailSent {
+  margin-top: 75px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  padding: 0 15px;
+  height: 40px;
+  /* center element */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emailSent p {
+  font-family: 'Anonymous Pro', monospace;  
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-right: 2px solid rgba(0,0,0,.75);
+  white-space: nowrap;
+  overflow: hidden;
+  color: black;
+  /*animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;*/
+}
+
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: var(--final-text-length);}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(0,0,0,.75);}
+  to{border-right-color: transparent;}
+}
+
+.errorMessage {
+  margin-top: 20px;
+  color: red;
+  font-weight: 600;
 }
 
 .bigger-cube {
   font-size: 5rem;
   vertical-align: -8px;
+}
+
+.transparent {
+  visibility: hidden;
 }
