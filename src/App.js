@@ -1,4 +1,6 @@
 import './App.css';
+import { ReactComponent as Cube } from "./assets/deployed_code.svg";
+import { ReactComponent as Send } from "./assets/send.svg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from 'react';
 
@@ -66,11 +68,10 @@ function App() {
         <b>
           Glass
           <motion.span
-            className={(isHovered || emailSent) ? "material-symbols-outlined bigger-cube" : ""}
             style={{ display: 'inline-block' }}
             animate={{ rotate: (isHovered || animateEmailSent) ? 360 : 0, transition: { duration: 0.3 } }}
           >
-            {(isHovered || emailSent) ? "deployed_code" : "Qb"}
+            {(isHovered || emailSent) ? <Cube className="bigger-cube"/> : "Qb"}
           </motion.span>
         </b>
       </motion.div>
@@ -127,12 +128,12 @@ function App() {
                 }}
               >
                 <motion.span
-                  className="material-symbols-outlined sendButton-span"
+                  className="sendButton-span"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={validateEmail}
                 >
-                  send
+                  <Send className="send-svg"/>
                 </motion.span>
               </motion.div>
             </motion.div>}
